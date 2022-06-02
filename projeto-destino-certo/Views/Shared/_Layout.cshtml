@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Destino Certo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/estilo.css" />
+    <link rel="icon" type="image/png" href="~/img/logo_home.png"> 
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a asp-action="Index"><img src="~/img/logo_home.png" alt="Logo" title="Knownledge&Learning" class="logo"></a>
+    <div class="right-items">
+    <div>
+    @if(Context.Session.GetInt32("id_usuarios") != null)
+                {
+                ViewBag.Login = "Olá " + @Context.Session.GetString("nome");
+
+                <span style="font-family:'Poppins', sans-serif; color: black; position:absolute; right:215px;  top: 25px; font-size: 15px;">@ViewBag.Login</span>
+                <a asp-action="Logout"><img class="icones-img" title="Logout" src="~/img/logout-icone.png" style="position:absolute; right:180px;  top: 25px;"></a>
+                }  
+    </div>   
+    <div class="menu-hamburger">   
+    <button id="button-hamburger"><img alt="Menu Hamburger" title="Menu" src="~/img/icone_menu.svg" class="icones-img"></button>
+    <ul>
+        <li><a asp-action="Index">Home</a></li>
+        <li><a asp-action="Produtos">Livros</a></li>
+        <li><a asp-action="Listar_Reservas">Lista de Reservas</a></li>
+        <li><a asp-action="Listar_Usuarios">Lista de Usuários</a></li>
+        <li><a asp-action="Atendimento">Atendimento</a></li>
+        <li><a asp-action="Trabalho">Trabalhe Conosco</a></li>
+        <li><a asp-action="Sobrenos">Sobre Nós</a></li>
+        <li><a asp-action="Cadastro">Cadastro</a></li>
+        <li><a asp-action="Login">Login</a></li>
+    </ul>
+    </div> 
+    </div>      
+        </nav>
+    </header>
+    <div>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p>KNOWLEDGE&LEARNING &copy; COPYRIGHT 2021 - <img src="https://cdn.icon-icons.com/icons2/1129/PNG/512/facebookblacksocialbuttoncircle_79771.png" width="30px"> Livraria Knownledge&Learning - <img src="https://cdn.clipart.email/1d6589803892d02247eea5df8cf9c686_instagram-black-white-icon-ig-icon-instagram-logo-social-media-_360-360.png" width="43px"> livrariaknownledge_learning - <img src="https://image.flaticon.com/icons/png/512/49/49411.png" width="30px"> Livraria Knownledge&Learning - <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/whatsapp_black_logo_icon_147050.png" width="32px"> (11) 95081-0474
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

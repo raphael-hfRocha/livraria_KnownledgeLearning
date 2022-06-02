@@ -1,0 +1,42 @@
+﻿/********************************ADMINISTRADORES*******************************/
+
+Login: raphael-henrique
+
+Senha: 4718
+
+
+Login: rose-alexandra
+
+Senha: 7436
+
+
+Login: hildo-hudson
+
+Senha: 0672
+
+
+Login: josie-eleterio
+
+Senha: 3554
+
+/********************************COLABORADORES**********************************/
+
+Login: marcelo-oliveira
+
+Senha: 5632
+
+
+Login: davi-silva
+
+Senha: 4590
+
+/********************************USUÁRIOS******************************************/
+
+Login: leonardo-fabricio
+
+Senha: 4431
+
+
+Login: victor-rodriguez
+
+Senha: 0679

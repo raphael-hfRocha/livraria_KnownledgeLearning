@@ -1,0 +1,39 @@
+@using Microsoft.AspNetCore.Http;
+@model Reserva
+
+@{
+    ViewData["Title"] = "Reserva";
+}
+
+<main class="fundo-color">
+
+    
+    <div class="cadastro-content">  
+    <div>
+        <div class="icone-titulo"><img class="icones-content" src="~/img/icone-lista_reserva.png"><h3 class="titulos">RESERVA</h3></div>
+    <form class="form-style" action="Reserva" method="POST">
+    <label class="label-style" asp-for="nome">Nome:</label>    
+    <input class="input-style" asp-for="nome" name="nome" required placeholder="Nome">
+    <label class="label-style" asp-for="quantidade">Quantidade:</label>    
+    <input class="input-style" asp-for="quantidade" name="quantidade" required placeholder="Quantidade">
+    <label class="label-style" asp-for="preco">Preço:</label>    
+    <input class="input-style" asp-for="preco" name="preco" required placeholder="preco">
+    <label class="label-style" asp-for="data_reserva">Data de Reserva:</label>    
+     <input class="input-style" asp-for="data_reserva" name="data_reserva" required placeholder="dd/mm/aa" maxlength="10">
+
+    <input type="submit" value="Reservar" class="input-button">
+    </form>
+     
+     <p class="mensagem-style">@ViewBag.Reserva</p>
+</div>
+
+    <div class="bloco-texto paragrafos">
+        <h3 class="titulos">FAÇA SUA RESERVA AGORA!</h3>
+        <p>Deixe reservado seu livro conosco, não perca essa chance!</p>
+        <p>Confira nossos melhores livros, ta esperando o que? Venha reservar o seu conosco!</p>
+    </div>
+
+</div>
+
+
+</main>

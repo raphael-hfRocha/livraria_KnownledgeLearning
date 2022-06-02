@@ -1,0 +1,40 @@
+@using Microsoft.AspNetCore.Http;
+@model IEnumerable<Reserva>
+@{
+    ViewData["Title"] = "Listagem de Reservas";
+}
+<main class="fundo-color">
+<div class="usuarios-content">  
+<div>
+    <div class="icone-titulo"><img class="icones-content" src="~/img/icone-lista_reserva.png"><h3 class="titulos">LISTAGEM DE RESERVA</h3></div>
+<p class="paragrafos">A lista de todos as reservas registradas no sistema está disponível abaixo. Use os botões da direita para realizar a exclusão ou alteração das reservas</p>
+<p class="paragrafos">ALERTA: Cuidado ao excluir uma reserva. Uma vez excluídos, os dados do registo relacionados a reserva não poderão ser recuperados.</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOME</th>
+      <th scope="col">QUANTIDADE</th>
+      <th scope="col">PREÇO</th>
+      <th scope="col">DATA DA RESERVA</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+     @foreach(Reserva r in Model){
+    <tr>
+      <th scope="row">@r.id</th>
+      <td>@r.nome</td>
+      <td>@r.quantidade</td>
+      <td>@r.preco</td>
+      <td>@r.data_reserva</td>
+      <td><a href="/Home/Alterar_Reserva?id=@r.id"><img class="icones-content" src="~/img/icone-edit.png"></td>
+      <td><a href="/Home/Excluir_Reserva?id=@r.id"><img class="icones-content" src="~/img/icone-close2.png"></a></td>
+    </tr>} 
+  </tbody>
+</table>
+
+</div>
+</main>
